@@ -1,0 +1,51 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "71e5ac71-a4a8-460f-a6a2-1f5f18f0b5b1"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "my-buttons": {
+      "projectType": "library",
+      "root": "projects/my-buttons",
+      "sourceRoot": "projects/my-buttons/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/my-buttons/tsconfig.lib.json",
+            "project": "projects/my-buttons/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/my-buttons/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/my-buttons/src/test.ts",
+            "tsConfig": "projects/my-buttons/tsconfig.spec.json",
+            "karmaConfig": "projects/my-buttons/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/my-buttons/tsconfig.lib.json",
+              "projects/my-buttons/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "my-buttons"
+}

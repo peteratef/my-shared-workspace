@@ -1,0 +1,455 @@
+.creditModal {
+  height: 100%;
+  margin-top: 4px;
+  margin-left: 0px;
+  ::ng-deep.mat-dialog-container {
+    padding: 0;
+  }
+  .paddingrightLeft {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+  .search-dropdown {
+    position: relative;
+    z-index: 333;
+
+    .dropdown {
+      float: left;
+      position: absolute;
+      margin: 0;
+      left: 0px;
+
+      max-height: 200px !important;
+      z-index: 9999999;
+      form {
+        max-height: 150px;
+        min-height: 230px;
+        position: fixed;
+        padding: 0px 0px 0px 15px;
+        background-color: white;
+
+        border: 1px solid #f2f4f7;
+        border-top: 0px;
+        margin-left: -1px;
+      }
+      li {
+        width: 100%;
+        list-style: none;
+        padding: 0px 16px 10px 16px;
+      }
+      li:last-child {
+        border: none;
+      }
+    }
+    .dropdownSmallWidth {
+      float: left;
+      position: absolute;
+      margin: 0;
+      right: 0px;
+
+      max-height: 200px !important;
+      z-index: 9999999;
+      form {
+        max-height: 150px;
+        min-height: 230px;
+        position: fixed;
+        padding: 0px 0px 0px 15px;
+        background-color: white;
+
+        border: 1px solid #f2f4f7;
+        border-top: 0px;
+        margin-left: -1px;
+      }
+      li {
+        width: 100%;
+        list-style: none;
+        padding: 0px 16px 10px 16px;
+      }
+      li:last-child {
+        border: none;
+      }
+    }
+
+    .dropdownBigWidth {
+      background-color: red !important;
+      float: left;
+      position: absolute;
+      margin: 0;
+      right: 0px;
+
+      max-height: 200px !important;
+      z-index: 9999999;
+      form {
+        max-height: 150px;
+        min-height: 230px;
+        position: unset;
+        padding: 0px 0px 0px 0px;
+        background-color: white;
+
+        border: 1px solid #f2f4f7;
+        border-top: 0px;
+        margin-left: -1px;
+      }
+      li {
+        width: 100%;
+        list-style: none;
+        padding: 0px 16px 10px 16px;
+      }
+      li:last-child {
+        border: none;
+      }
+    }
+    .inputTextColor {
+      color: var(--color-gray500) !important;
+      font-size: 16px;
+      padding-right: 10px;
+    }
+    .blackColor {
+      margin-top: 5px;
+      color: black;
+    }
+    .eachFilterInputTextSmall {
+      margin-left: -13px;
+
+      // this decrease by 30
+      margin-top: 2px;
+      ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+        min-width: 93px !important;
+        height: 44px;
+        font-size: 16px;
+      }
+      ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+    }
+    .divUl {
+      max-height: 181px;
+      min-height: 181px;
+      overflow-y: scroll;
+      margin-top: 47px;
+      margin-bottom: 0;
+      padding-left: 0;
+      position: fixed;
+      background-color: white;
+      padding-left: 20px;
+    }
+
+    .eachFilterInputTextBigWidth {
+      margin-top: 2px;
+      ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+        min-width: 93px !important;
+        height: 44px;
+        font-size: 16px;
+      }
+      ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+    }
+
+    .eachFilterInputTextSmallPopUp {
+      margin-top: 2px;
+      ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+        min-width: 93px !important;
+        height: 44px;
+        font-size: 16px;
+      }
+      ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+    }
+    .divUlBigWidth {
+      max-height: 181px;
+      min-height: 181px;
+      overflow-y: scroll;
+      margin-top: -190px;
+      margin-bottom: 0;
+      padding-left: 0;
+      position: unset;
+      background-color: white;
+      padding-left: 20px;
+    }
+    .divUlPopUp {
+      max-height: 181px;
+      min-height: 181px;
+      overflow-y: scroll;
+      margin-top: 47px;
+      margin-bottom: 0;
+      padding-left: 0;
+      position: fixed;
+      background-color: white;
+      padding-left: 20px;
+    }
+
+    ul {
+      max-height: 150px;
+      min-height: 150px;
+      overflow-y: scroll;
+      margin-top: 74px;
+      margin-bottom: 0;
+      padding-left: 0;
+      position: fixed;
+      background-color: white;
+      padding-left: 10px;
+    }
+  }
+}
+.divAsInputGrey {
+  width: 100%;
+  border-radius: 8px;
+  border: thin solid #d0d5dd;
+  height: 44px;
+  padding: 11px 10px;
+  cursor: pointer;
+  color: #a8a8a8;
+  font-weight: 100;
+  margin-top: 5px;
+}
+.divAsInputNormal {
+  font-size: 15px;
+  width: 100%;
+  border-radius: 8px;
+  border: thin solid #d0d5dd;
+  height: 44px;
+  padding: 11px 10px;
+  cursor: pointer;
+
+  background-color: white;
+  font-weight: 100;
+  margin-top: 5px;
+}
+.divAsInputNormalError {
+  font-size: 15px;
+  width: 100%;
+  border-radius: 8px;
+  border: thin solid red;
+  height: 44px;
+  padding: 11px 10px;
+  cursor: pointer;
+
+  background-color: white;
+  font-weight: 100;
+  margin-top: 5px;
+}
+.inputColor {
+  color: #535864;
+}
+.dataLoaderHeightScroll {
+  height: 5px;
+  position: absolute;
+  margin-left: 35%;
+
+  z-index: 1;
+  margin-top: 120px;
+}
+.dataLoaderHeight {
+  height: 5px;
+  position: fixed;
+  margin-left: 10%;
+
+  z-index: 1;
+  margin-top: 120px;
+}
+
+.paddingItem {
+  padding-top: 10px;
+  padding-left: 7px;
+}
+.eachRow {
+  margin-bottom: -12px;
+}
+.iconPosition {
+  position: absolute;
+  margin-left: 92%;
+  margin-top: -31px;
+  cursor: pointer;
+}
+.iconPositionPopUp {
+  position: absolute;
+  margin-left: 90%;
+  margin-top: -31px;
+  cursor: pointer;
+}
+.noDataFound {
+  text-align: center;
+  margin-top: 85px;
+
+  z-index: 9999999999;
+}
+.noDataFoundNormal {
+  text-align: center;
+  margin-top: 10px;
+  margin-top: 85px;
+
+  z-index: 9999999999;
+}
+
+//////////////////////
+///// input csss //////////////////
+.ngx-dropdown-container {
+  .ngx-dropdown-button {
+    .display-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+.inputTextPrefixSmallPercent {
+  color: var(--color-black600) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  border-right: solid thin #d0d5dd !important;
+  margin-top: -56px !important;
+  width: 23px !important;
+  height: 28px !important;
+  padding-top: 3px !important;
+  margin-left: 14px !important;
+}
+.inputTextPrefixSmallPercentDisable {
+  color: var(--color-black600) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  border-right: solid thin #d0d5dd !important;
+  margin-top: -36px !important;
+  width: 23px !important;
+  height: 28px !important;
+  padding-top: 3px !important;
+  margin-left: 14px !important;
+}
+.inputTextPrefixContainerSmallPercent {
+  width: 36px;
+}
+.inputTextPrefixSmall {
+  color: var(--color-black600) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  border-right: solid thin #d0d5dd !important;
+  margin-top: -56px !important;
+  width: 45px !important;
+  height: 28px !important;
+  padding-top: 3px !important;
+  margin-left: 14px !important;
+}
+.inputTextPrefixSmallDisable {
+  color: var(--color-black600) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  border-right: solid thin #d0d5dd !important;
+  margin-top: -36px !important;
+  width: 45px !important;
+  height: 28px !important;
+  padding-top: 3px !important;
+  margin-left: 14px !important;
+}
+.inputTextPrefixContainerSmall {
+  width: 59px;
+}
+.inputTextPrefix {
+  color: var(--color-black600);
+  font-weight: 600;
+  border-right: solid thin #d0d5dd;
+  margin-top: -58px;
+  width: 67px;
+  height: 28px;
+  padding-top: 4px;
+  margin-left: 8px;
+}
+.inputTextPrefixContainer {
+  width: 70px;
+}
+.default-form {
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white !important;
+    border-radius: 8px;
+    color: var(--color-gray300);
+  }
+  input.mat-input-element {
+    color: var(--color-gray500);
+  }
+  .default-icon {
+    color: var(--color-gray500);
+  }
+  .mat-form-field-appearance-outline:hover .mat-form-field-outline {
+    color: var(--color-blue7);
+  }
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: var(--color-blue4);
+  }
+  input:focus.mat-input-element {
+    color: var(--color-black600);
+  }
+  input:focus {
+    caret-color: var(--color-blue4) !important;
+  }
+  input:valid.mat-input-element {
+    color: var(--color-black600);
+  }
+  .default-error-icon {
+    position: absolute;
+    top: 14px;
+    right: -5px;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 4px;
+    color: var(--color-errorColor);
+    z-index: 10;
+  }
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+    .mat-form-field-outline-thick {
+    color: var(--color-errorColor2);
+  }
+  .mat-error {
+    color: var(--color-errorColor);
+  }
+  .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+    padding: 0;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0 14px;
+  }
+  .mat-form-field-outline-thick > div {
+    border-width: 1px !important;
+  }
+  .mat-form-field-infix {
+    padding: unset !important;
+    border-top: unset !important;
+  }
+  .mat-form-field-flex > .mat-form-field-infix {
+    padding-top: 16.5px !important;
+    padding-bottom: 14px !important;
+    height: 48px;
+    font-size: 16px;
+  }
+  .mat-form-field-outline-start {
+    border-radius: 8px 0 0 8px !important;
+  }
+  .mat-form-field-outline-end {
+    border-radius: 0 8px 8px 0 !important;
+  }
+  .mat-form-field-outline-start {
+    min-width: 8px !important;
+  }
+  .mat-form-field-subscript-wrapper {
+    margin-top: 13px;
+    font-size: 14px;
+  }
+  .service-desc .mat-form-field-subscript-wrapper {
+    margin-top: 8px !important;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-prefix {
+    padding-right: 8px;
+  }
+}
+/// the below border is for the color of the filter with search used in pricing pop up
+.mat-filter {
+  border-bottom: 1px solid #d0d5dd !important;
+}
+
+.mat-checkbox-disabled .mat-checkbox-label {
+  color: #d0d5e2 !important;
+  text-decoration: line-through;
+}
+
+.mat-checkbox.mat-checkbox-disabled .mat-checkbox-frame {
+  border-color: #d0d5dd !important; /* Keep the same color when disabled */
+}

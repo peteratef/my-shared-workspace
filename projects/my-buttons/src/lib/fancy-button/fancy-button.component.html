@@ -1,0 +1,63 @@
+<!-- start of searchDropdown -->
+<div class="creditModal">
+    <div [ngStyle]="{'z-index': zIndex}" class="search-dropdown" id="mainDiv">
+        <div [class]="error == 'true' ? 'divAsInputNormalError' : className" id="dropdownBtn"
+            (click)="$event.stopPropagation();showHideDropDown();" #dropdownBtn>
+            <span *ngIf="this.all_selected_values.length > 0">
+                <span *ngFor="let eachValue of this.all_selected_values; let i = index">
+                    <span class="inputColor" *ngIf="i<2">{{eachValue[firstData]}} #{{eachValue[secondData]}}<span
+                            *ngIf="this.all_selected_values.length > i+1">, </span>
+                    </span>
+                </span>
+                <span *ngIf="this.all_selected_values.length > 2"> ..... +{{this.all_selected_values.length-2}} </span>
+            </span>
+            <span *ngIf="this.all_selected_values.length === 0">{{selectPlaceHolder}}</span>
+        </div>
+        <mat-icon matSuffix class="{{filterPopUpWidthClass==='dropdown'?'iconPosition':'iconPositionPopUp'}}"
+            (click)="$event.stopPropagation();showHideDropDown();">expand_more</mat-icon>
+        <div *ngIf="showDropdown" [style]="{ 'top': topValue }" class="{{filterPopUpWidthClass}}"
+            (click)="$event.stopPropagation()">
+            <form [formGroup]="filterForm" novalidate class="dialog-with-autocomplete default-form">
+                <mat-form-field appearance="outline" [style.width.px]="mainDivWidth-30"
+                    class="{{filterPopUpWidthClass==='dropdown'?'eachFilterInputTextSmall':filterPopUpWidthClass==='dropdownBigWidth'?'eachFilterInputTextBigWidth':'eachFilterInputTextSmallPopUp'}}"
+                    [style.width.px]="mainDivWidth" class="paddingrightLeft">
+                    <input class="inputTextColor" min="0" step="1" type="text" matInput
+                        placeholder="{{searchPlaceHolder}}" formControlName="searchField" (input)="onSearch($event)" />
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="cursor margin-right-5" matPrefix
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </mat-form-field>
+            </form>
+            <div class="{{filterPopUpWidthClass==='dropdown'?'divUl':filterPopUpWidthClass==='dropdownBigWidth'?'divUlBigWidth':'divUlPopUp'}}"
+                (scroll)="scrollFn($event)" id="scrollable-content" [style.width.px]="mainDivWidth">
+                <div *ngIf="isDataLoading"
+                    [class]="filterPopUpWidthClass==='dropdownBigWidth' ? 'dataLoaderHeightScroll' : 'dataLoaderHeight'">
+                    <mat-spinner matSuffix [diameter]="18"></mat-spinner>
+                </div>
+                <!--  [disabled]="eachData.tagName ==='Ktag'" -->
+                <div class="eachRow cursor" *ngFor="let eachData of data">
+                    <mat-checkbox *ngIf="checkBoxParmeter" #ref (change)="changeValue(eachData)"
+                        [checked]="allSelectedIds?.includes(eachData[checkBoxParmeter])"
+                        [disabled]="allDisabledIds?.includes(eachData[checkBoxParmeter]) || eachData[disableConditionField]===true">
+                        <div class=" font-16-500 margin-bottom-10 paddingItem">
+                            {{eachData[firstData]}} #{{eachData[secondData]}}
+                        </div>
+                    </mat-checkbox>
+                    <span *ngIf="!checkBoxParmeter">
+                        <div class="font-16-500 margin-bottom-10 paddingItem"
+                            (click)="eachData[disableConditionField]!=true ? changeValue(eachData):''">
+                            {{eachData[firstData]}} #{{eachData[secondData]}}
+                        </div>
+                    </span>
+                </div>
+                <div *ngIf="data && data.length === 0 && !isDataLoading"
+                    class="{{noDataFoundclass==='noDataFoundNormal'?'noDataFoundNormal':'noDataFound'}}"> no data found
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of searchDropdown -->
